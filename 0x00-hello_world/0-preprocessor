@@ -1,2 +1,2 @@
 #!/bin/bash
-./$CFILE | echo >> c
+./$CFILE | echo > c
