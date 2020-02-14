@@ -6,30 +6,41 @@
  */
 void print_number(int n)
 {
-	int i = 1, c = 45, a, aux = 1;
+	int a = n, b = 10, e = 45, aux;
 
-	if(n < 0)
+	if (n < 0)
 	{
-		_putchar(c);
+		_putchar(e);
 		n = n * -1;
+		a = n;
 	}
-	a = n;
-	while (a / 10 != 0)
-	{
-		i++;
-		aux = aux * 10;
-		a = a / 10;
-	}
-	if(i > 1)
+	if (n > 9)
 	{
 		a = n;
-		if()
+		while (b <= n)
 		{
-
+			aux = b;
+			b = b * 10;
+		}
+		b = a;
+		_putchar((a / aux) + '0');
+		while (b >= 10)
+		{
+			aux = aux / 10;
+			if (aux == 1)
+			{
+				a = n % 10;
+				break;
+			}
+			else
+			{
+				b = a / aux;
+			}
+			_putchar((b % 10) + '0');
 		}
 	}
-	else
+	if (a < 10)
 	{
-		_putchar(n + '0');
+		_putchar(a + '0');
 	}
 }
