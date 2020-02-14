@@ -6,7 +6,9 @@
  */
 void print_number(int n)
 {
-	int a = n, b = 10, e = 45, aux;
+	int a = n, e = 45;
+
+	long b = 10, aux;
 
 	if (n < 0)
 	{
