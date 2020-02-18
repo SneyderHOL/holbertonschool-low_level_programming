@@ -1,5 +1,5 @@
 #include "holberton.h"
-
+typedef enum {false, true} bool;
 /**
  *_atoi - convert a string to an integer
  *
@@ -8,7 +8,9 @@
  */
 int _atoi(char *s)
 {
-	int a, aux = 1, num = false, n = 0, b;
+	int a, aux = 1, n = 0;
+
+	bool num = false;
 
 	for (a = 0; *(s + a) != 0; a++)
 	{
@@ -21,7 +23,7 @@ int _atoi(char *s)
 			num = true;
 			if (n > 0 && num)
 				n *= 10;
-			n = *(s + a) - '0';
+			n += *(s + a) - '0';
 		}
 		else if (n > 0 && num)
 			break;
