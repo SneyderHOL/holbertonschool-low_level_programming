@@ -8,9 +8,9 @@
  */
 int _atoi(char *s)
 {
-	int a, aux = 1, n = 0;
+	int a, aux = 1, num = 0;
 
-	unsigned int num = 0;
+	unsigned int n = 0;
 
 	for (a = 0; *(s + a) != 0; a++)
 	{
