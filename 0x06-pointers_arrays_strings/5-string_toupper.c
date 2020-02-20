@@ -13,8 +13,8 @@ char *string_toupper(char *n)
 
 	for (b = 0; *(n + b) != 0; b++)
 	{
-		if(*(n + b) > 96 && *(n + b) < 123)
-	        {
+		if (*(n + b) > 96 && *(n + b) < 123)
+		{
 			*(n + b) -= 32;
 		}
 	}
