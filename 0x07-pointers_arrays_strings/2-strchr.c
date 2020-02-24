@@ -11,7 +11,8 @@ char *_strchr(char *s, char c)
 {
 	unsigned int a;
 
-	char aux = *s; 
+	char aux = *s;
+
 	for (a = 0; *(s + a) != 0; a++)
 	{
 		if (c == *(s + a))
