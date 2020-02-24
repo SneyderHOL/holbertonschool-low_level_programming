@@ -9,26 +9,15 @@
  */
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int aux = 0, a, b, i = 0, index = 0;
+	int aux = 0, b, index = 0;
 
-	for (a = 0; *(needle + a); a++)
-	{
-	}
-	i = a;
 	for (b = 0; *(haystack + b) != 0; b++)
 	{
-		for (a = aux; *(needle + a); a++)
-		{
-			if (*(haystack + b) != *(needle + a))
-				break;
-			if (index == 0)
-				index = b;
-			aux++;
-			break;
-		}
+		if (*(haystack + b) != *(needle + aux))
+			continue;
+		if (index == 0)
+			index = b;
+		aux++;
 	}
-	if (i == aux)
-		return (haystack + index);
-	else
-		return (NULL);
+	return (haystack + index);
 }
