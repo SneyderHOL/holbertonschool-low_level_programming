@@ -9,21 +9,18 @@
  */
 unsigned int _strspn(char *s, char *accept)
 {
-	unsigned int aux = 0, a, b;
+	unsigned int aux = 0, a = 0, b;
 
-	for (a = 0; *(accept + a) != 0; a++)
+	for (b = 0; *(s + b) != 0 && *(accept + a) != 0; b++)
 	{
-		for (b = 0; *(s + b) != 0; b++)
+		for (a = 0; *(accept + a) != 0; a++)
 		{
-			if (*(s + b) == *(accept + a))
+			if (*(accept + a) == *(s + b))
 			{
-				if (aux < b)
-				{
-					aux = b;
-				}
+				aux++;
 				break;
 			}
 		}
 	}
-	return (aux + 1);
+	return (aux);
 }
