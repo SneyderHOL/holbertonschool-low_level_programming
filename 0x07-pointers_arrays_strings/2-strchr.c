@@ -15,8 +15,10 @@ char *_strchr(char *s, char c)
 	{
 		if (c == *(s + a))
 		{
-			return (s + a);
+			s =(s + a);
+			return (s);
 		}
 	}
-	return (NULL);
+	s = NULL;
+	return (s);
 }
