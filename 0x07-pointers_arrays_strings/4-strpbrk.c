@@ -24,5 +24,7 @@ char *_strpbrk(char *s, char *accept)
 		if (aux != 0)
 			break;
 	}
+	if (aux == 0)
+		return (NULL);
 	return (s + aux);
 }
