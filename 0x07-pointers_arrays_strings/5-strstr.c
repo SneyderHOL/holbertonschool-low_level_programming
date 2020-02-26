@@ -11,7 +11,7 @@ char *_strstr(char *haystack, char *needle)
 {
 	int aux = 0, a = 0, b = 0, index = -1;
 
-	if (!*needle)
+	if (*needle == 0)
 		return (haystack);
 	while (*(needle + a) && *(haystack + b))
 	{
@@ -31,7 +31,7 @@ char *_strstr(char *haystack, char *needle)
 			a = 0;
 		}
 	}
-	if (aux == a)
+	if (aux == a && index >= 0)
 		return (haystack + index);
-	return (0);
+	return (NULL);
 }
