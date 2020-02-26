@@ -1,1 +1,1 @@
-# Project 0x00 C - Hello, World
+# Repository that contains severall projects in C
