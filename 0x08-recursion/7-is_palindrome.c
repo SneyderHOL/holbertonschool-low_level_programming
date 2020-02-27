@@ -33,7 +33,7 @@ int is_palindrome(char *s)
 	int i = 0;
 
 	if (*s == 0)
-		return (0);
+		return (1);
 	aux = s;
 	while (*(s + 1))
 	{
@@ -46,6 +46,8 @@ int is_palindrome(char *s)
 		else
 			return (0);
 	}
+	else if (*aux == *s)
+		i = 1;
 	else
 		i = 0;
 	return (i);
