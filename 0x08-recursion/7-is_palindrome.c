@@ -1,24 +1,35 @@
 #include "holberton.h"
 /**
- *eval - evaluate characters.
- *@s: char pointer
- *@aux: char
+ *last - last position of a pointer.
+ *@p: char pointer
+ *
  *Return: integer
  */
-int eval(char *aux, char *s)
+int last(char *p)
 {
-	int i = 1;
-
-	if (aux != s)
+	if (*p != 0)
 	{
-		if (*aux == *s)
-			i = (eval(aux + 1, s - 1));
-		else
-			return (0);
+		p++;
+		return (1 + last(p));
 	}
-	if (s + 1 == aux)
+	return (0);
+}
+/**
+ *eval - evaluate characters.
+ *@aux: char pointer
+ *@a: integer
+ *@b: integer
+ *Return: integer
+ */
+int eval(char *aux, int a, int b)
+{
+	int comp = a - b - 1;
+
+	if (b >= (a / 2))
 		return (1);
-	return (i);
+	if (*(aux + b) == *(aux + comp))
+		return (eval(aux, a, b + 1));
+	return (0);
 }
 /**
  *is_palindrome - returns 1 if a string is a palindrome and 0 if not.
@@ -28,27 +39,10 @@ int eval(char *aux, char *s)
  */
 int is_palindrome(char *s)
 {
-	char *aux = NULL;
-
-	int i = 0;
+	int i = 0, a = 0;
 
 	if (*s == 0)
 		return (1);
-	aux = s;
-	while (*(s + 1))
-	{
-		s++;
-	}
-	if (aux + 1 != s)
-	{
-		if (*aux == *s)
-			i = eval(aux + 1, s - 1);
-		else
-			return (0);
-	}
-	else if (*aux == *s)
-		i = 1;
-	else
-		i = 0;
-	return (i);
+	i = last(s);
+	return (eval(s, i, a));
 }
