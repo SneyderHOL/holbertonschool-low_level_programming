@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#include <stdlib.h>
 /**
  *main - Entry point
  *@argc: integer
@@ -8,7 +9,18 @@
  */
 int main(int argc, char *argv[])
 {
-	if (argc < 2)
-		printf("%s\n", argv[argc - 1]);
+	int mul = 0, a = 1;
+
+	if (argc > 2)
+	{
+		mul = 1;
+		for (; a < argc; a++)
+		{
+			mul *= atoi(argv[a]);
+		}
+		printf("%d\n", mul);
+	}
+	if (argc == 1)
+		printf("Error\n");
 	return (0);
 }
