@@ -12,7 +12,7 @@ int main(int argc, char *argv[])
 	int aux = 0, arreglo[] = {25, 10, 5, 2, 1}, a = 0, val = 0, *ar = NULL;
 
 	ar = arreglo;
-	if (argc == 1 || argc > 2)
+	if (argc <= 1 || argc > 2)
 	{
 		printf("Error\n");
 		return (1);
@@ -21,6 +21,11 @@ int main(int argc, char *argv[])
 	if (aux < 0)
 	{
 		printf("0\n");
+	}
+	else if (*argv[1] > 57 || *argv[1] < 48)
+	{
+		printf("Error\n");
+		return (1);
 	}
 	else
 	{
