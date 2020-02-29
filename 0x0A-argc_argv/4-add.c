@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
  *main - Entry point
@@ -15,7 +14,7 @@ int main(int argc, char *argv[])
 	{
 		for (; a < argc; a++)
 		{
-			if (*argv[a] > 47 && *argv[a] < 58)
+			if ((*argv[a] > 47 && *argv[a] < 58) || atoi(argv[a]) != 0)
 				suma += atoi(argv[a]);
 			else
 			{
