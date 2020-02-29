@@ -15,10 +15,16 @@ int main(int argc, char *argv[])
 	{
 		for (; a < argc; a++)
 		{
-			if (atoi )
-			suma += 
+			if (*argv[a] > 47 && *argv[a] < 58)
+				suma += atoi(argv[a]);
+			else
+			{
+				printf("Error\n");
+				return (0);
+			}
 		}
-		printf("%d\n", suma);
 	}
-	return (suma);
+	printf("%d\n", suma);
+
+	return (0);
 }
