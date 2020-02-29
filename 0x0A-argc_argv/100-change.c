@@ -17,6 +17,12 @@ int main(int argc, char *argv[])
 		printf("Error\n");
 		return (1);
 	}
+	aux = atoi(argv[1]);
+	if (aux < 0)
+	{
+		printf("0\n");
+		return (0);
+	}
 	for (; argv[1][b]; b++)
 	{
 		if (argv[1][b] > 57 || argv[1][b] < 48)
@@ -25,7 +31,6 @@ int main(int argc, char *argv[])
 			return (1);
 		}
 	}
-	aux = atoi(argv[1]);
 	while (aux != val)
 	{
 		if (aux >= (val + *ar))
