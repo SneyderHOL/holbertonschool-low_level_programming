@@ -8,19 +8,22 @@
  */
 int main(int argc, char *argv[])
 {
-	int suma = 0, a = 1;
+	int suma = 0, a = 1, aux = 0, b;
 
 	if (argc > 1)
 	{
 		for (; a < argc; a++)
 		{
-			if ((*argv[a] > 47 && *argv[a] < 58) || atoi(argv[a]) != 0)
-				suma += atoi(argv[a]);
-			else
+			for (b = 0; argv[a][b]; b++)
 			{
-				printf("Error\n");
-				return (1);
+				if (!(argv[a][b] > 47 && argv[a][b] < 58))
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
+			aux = atoi(argv[a]);
+			suma += aux;
 		}
 	}
 	printf("%d\n", suma);
