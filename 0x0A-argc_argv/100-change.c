@@ -9,39 +9,33 @@
  */
 int main(int argc, char *argv[])
 {
-	int aux = 0, arreglo[] = {25, 10, 5, 2, 1}, a = 0, val = 0, *ar = NULL;
+	int aux = 0, a = 0, val = 0, b = 0, cent[] = {25, 10, 5, 2, 1}, *ar = NULL;
 
-	ar = arreglo;
+	ar = cent;
 	if (argc <= 1 || argc > 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	aux = atoi(argv[1]);
-	if (aux < 0)
+	for (; argv[1][b]; b++)
 	{
-		printf("0\n");
-	}
-	else if (*argv[1] > 57 || *argv[1] < 48)
-	{
-		printf("Error\n");
-		return (1);
-	}
-	else
-	{
-		while (aux != val)
+		if (argv[1][b] > 57 || argv[1][b] < 48)
 		{
-			if (aux >= (val + *ar))
-			{
-				val += *ar;
-				a++;
-			}
-			else
-			{
-				ar++;
-			}
+			printf("Error\n");
+			return (1);
 		}
-		printf("%d\n", a);
 	}
+	aux = atoi(argv[1]);
+	while (aux != val)
+	{
+		if (aux >= (val + *ar))
+		{
+			val += *ar;
+			a++;
+		}
+		else
+			ar++;
+	}
+	printf("%d\n", a);
 	return (0);
 }
