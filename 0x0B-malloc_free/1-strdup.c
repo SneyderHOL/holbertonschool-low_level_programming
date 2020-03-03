@@ -10,12 +10,16 @@ char *_strdup(char *str)
 {
 	char *poin = NULL;
 
-	int j;
+	int i, j = 0;
 
 	if (str == NULL)
 		return (NULL);
-	poin = malloc(1);
-	for (j = 0; *(str + j); j++)
-		*(poin + j) = *(str + j);
+	for (i = 0; *(str + i); i++)
+	{
+		j++;
+	}
+	poin = malloc(j);
+	for (i = 0; i < j; i++)
+		*(poin + i) = *(str + i);
 	return (poin);
 }
