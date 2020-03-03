@@ -12,13 +12,13 @@ char *str_concat(char *s1, char *s2)
 
 	int i = 0, j = 0, a = 0, b = 0;
 
-	if (s1 == NULL && s2 == NULL)
+	if (!*s1 && !*s2)
 		return (NULL);
-	if (!(s1 == NULL))
+	if (*s1)
 		for (i = 0; *(s1 + i); i++)
 		{
 		}
-	if (!(s2 == NULL))
+	if (*s2)
 		for (j = 0; *(s2 + j); j++)
 		{
 		}
@@ -34,14 +34,8 @@ char *str_concat(char *s1, char *s2)
 		*(poin + a) = '\0';
 	}
 	else if (i != 0)
-	{
 		poin = realloc(s1, (i + 1) * sizeof(char));
-		*(poin + i) = '\0';
-	}
 	else
-	{
 		poin = realloc(s2, (j + 1) * sizeof(char));
-		*(poin + j) = '\0';
-	}
 	return (poin);
 }
