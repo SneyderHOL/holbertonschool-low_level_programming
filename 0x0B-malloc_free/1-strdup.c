@@ -18,9 +18,11 @@ char *_strdup(char *str)
 	{
 		j++;
 	}
-	poin = malloc(j);
+	poin = malloc(j * sizeof(char));
+	if (poin == NULL)
+		return (NULL);
 	for (i = 0; i < j; i++)
 		*(poin + i) = *(str + i);
-	*(poin + i) = *(str + i);
+	*(poin + i) = '\0';
 	return (poin);
 }
