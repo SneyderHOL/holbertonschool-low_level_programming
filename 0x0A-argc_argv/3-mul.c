@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdio.h>
 #include <stdlib.h>
 /**
  *main - Entry point
@@ -20,7 +19,7 @@ int main(int argc, char *argv[])
 		}
 		printf("%d\n", mul);
 	}
-	if (argc == 1)
+	if (argc <= 2)
 		printf("Error\n");
 	return (0);
 }
