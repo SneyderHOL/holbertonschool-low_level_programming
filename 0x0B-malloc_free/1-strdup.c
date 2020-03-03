@@ -21,5 +21,6 @@ char *_strdup(char *str)
 	poin = malloc(j);
 	for (i = 0; i < j; i++)
 		*(poin + i) = *(str + i);
+	*(poin + i) = *(str + i);
 	return (poin);
 }
