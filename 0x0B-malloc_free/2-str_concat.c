@@ -12,12 +12,14 @@ char *str_concat(char *s1, char *s2)
 
 	int i = 0, j = 0, a = 0, b = 0;
 
-	if (!*s1 && !*s2)
-		return (NULL);
-	for (i = 0; *(s1 + i); i++)
+	if (*s1 == 0)
+		s1 = "";
+	if (*s2 == 0)
+		s2 = "";
+	for (; *(s1 + i); i++)
 	{
 	}
-	for (j = 0; *(s2 + j); j++)
+	for (; *(s2 + j); j++)
 	{
 	}
 	poin = (char *) malloc((i + j + 1) * sizeof(char));
