@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include <stdlib.h>
 #include <stdio.h>
 /**
  *str_concat - concatenates two strings.
@@ -13,9 +13,9 @@ char *str_concat(char *s1, char *s2)
 
 	int i = 0, j = 0, a = 0, b = 0;
 
-	if (*s1 == 0)
+	if (s1 == NULL)
 		s1 = "";
-	if (*s2 == 0)
+	if (s2 == NULL)
 		s2 = "";
 	for (; *(s1 + i); i++)
 	{
@@ -28,7 +28,7 @@ char *str_concat(char *s1, char *s2)
 		return (NULL);
 	for (; a < i; a++)
 		*(poin + a) = *(s1 + a);
-	for (; b < j; a++, b++)
+	for (; b < j; b++, a++)
 		*(poin + a) = *(s2 + b);
 	*(poin + a) = '\0';
 	return (poin);
