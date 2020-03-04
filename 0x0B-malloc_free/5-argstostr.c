@@ -22,7 +22,6 @@ char *argstostr(int ac, char **av)
 		}
 		num++;
 	}
-	num++;
 	ar = malloc(num * sizeof(char));
 	if (ar == NULL)
 		return (NULL);
@@ -37,6 +36,5 @@ char *argstostr(int ac, char **av)
 		*(ar + aux) = '\n';
 		aux++;
 	}
-	*(ar + aux) = '\0';
 	return (ar);
 }
