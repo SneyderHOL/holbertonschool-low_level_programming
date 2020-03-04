@@ -22,7 +22,7 @@ char *str_concat(char *s1, char *s2)
 	for (; *(s2 + j); j++)
 	{
 	}
-	poin = (char *) malloc((i + j + 1) * sizeof(char));
+	poin = malloc((i + j + 1) * sizeof(char));
 	if (poin == NULL)
 		return (NULL);
 	for (; a < i; a++)
