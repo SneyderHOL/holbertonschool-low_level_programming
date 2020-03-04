@@ -9,7 +9,7 @@
  */
 int **alloc_grid(int width, int height)
 {
-	int **mat = NULL, a = 0, b = 0;
+	int **mat = NULL, a = 0, b = 0, c;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
@@ -21,6 +21,8 @@ int **alloc_grid(int width, int height)
 		mat[a] = (int *) malloc(width * sizeof(int));
 		if (!mat[a])
 		{
+			for (c = 0; c < height; c++)
+				free(mat[c]);
 			free(mat);
 			return (NULL);
 		}
