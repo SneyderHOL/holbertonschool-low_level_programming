@@ -2,19 +2,20 @@
 /**
  *string_lenght - calculates the length of a string
  *@s: char pointer argument
-  *Return: unsigned integer
+ *Return: unsigned integer
+ *
  */
 unsigned int string_lenght(char *s)
 {
-	unsigned int a = 0;
+	unsigned int aux = 0;
 
-	for (a = 0; *(s + a); a++)
+	for (aux = 0; *(s + aux); aux++)
 	{
 	}
-	return (a);
+	return (aux);
 }
 /**
- *string_nconcat - concatenates two strings
+ *string_nconcat - concatenates two strings.
  *@s1: char pointer argument
  *@s2: char pointer argument
  *@n: unsigned int argument
@@ -48,5 +49,7 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		aux++;
 	}
 	*(p + aux) = '\0';
+	if (p == NULL)
+		return (NULL);
 	return (p);
 }
