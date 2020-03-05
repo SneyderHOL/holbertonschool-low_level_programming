@@ -1,19 +1,5 @@
 #include "holberton.h"
-/**
- *string_lenght - calculates the length of a string
- *@s: char pointer argument
- *Return: unsigned integer
- *
- */
-unsigned int string_lenght(char *s)
-{
-	unsigned int aux = 0;
 
-	for (aux = 0; *(s + aux); aux++)
-	{
-	}
-	return (aux);
-}
 /**
  *string_nconcat - concatenates two strings.
  *@s1: char pointer argument
@@ -31,13 +17,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		s1 = "";
 	if (s2 == NULL)
 		s2 = "";
-	a = string_lenght(s1);
-	b = string_lenght(s2);
-	p = malloc((a + b + 1) * sizeof(char));
-	if (p == NULL)
-		return (NULL);
+	for (a = 0; *(s1 + a); a++)
+	{
+	}
+	for (b = 0; *(s2 + b); b++)
+	{
+	}
 	if (n >= b)
 		n = b;
+	p = malloc((a + n + 1) * sizeof(char));
+	if (p == NULL)
+		return (NULL);
 	for (i = 0; i < a; i++)
 	{
 		*(p + aux) = *(s1 + i);
