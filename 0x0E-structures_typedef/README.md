@@ -2,12 +2,14 @@
 
 Use of structures and typedef in C
 
-0-object_like_macro.h - it's a header file that defines a macro named SIZE as an abbreviation for the token 1024.
+dog.h - it's a struct dog with name of type char *, age of type float and owner of type char *.
 
-1-pi.h - it's a header that defines a macro named PI as an abbreviation for the token 3.14159265359.
+1-init_dog.c - it's a function that initialize a variable of type struct dog.
 
-2-main.c - it's a program that prints the name of the file it was compiled from.
+2-print_dog.c - it's a function that prints a struct dog.
 
-3-funcion_like_macro.h - it's a function-like macro ABS(x) that computes the absolute value of a number x.
+dog.h - it's defined a new type dog_t as a name for the type struct dog.
 
-4-sum.h - it's a function-like macro SUM(x, y) that computes the sum of the numbers x and y.
+4-new_dog.c - it's a function that creates a new dog.
+
+5-free_dog.c - it's a function that frees dogs.
