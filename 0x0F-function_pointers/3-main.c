@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	if (argv[2][1] != '\0' || (!operation))
 	{
 		printf("Error\n");
-		exit(100);
+		exit(99);
 	}
 	if (*argv[3] == '0' && (*argv[2] == '/' || *argv[2] == '%'))
 	{
