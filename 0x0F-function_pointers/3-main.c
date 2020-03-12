@@ -2,10 +2,10 @@
 #include <stdlib.h>
 #include "3-calc.h"
 /**
- * main - function that prints a name
- * @argc: pointer to a char
- * @argv: pointer to a function
- * Return: the operation
+ * main - Entry point
+ * @argc: integer argument
+ * @argv: array of pointers argument
+ * Return: Always 0 (Success)
  */
 int main(int argc, char *argv[])
 {

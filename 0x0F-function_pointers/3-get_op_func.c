@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * get_op_func - function that prints a name
- * @s: this is function
- * Return: void
+ * get_op_func - function that return a basic operation function
+ * @s: char pointer argument
+ *Return the function selected
  */
 int (*get_op_func(char *s))(int, int)
 {
