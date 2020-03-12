@@ -1,5 +1,6 @@
 #include "3-calc.h"
-#include "function_pointers.h"
+#include <stdlib.h>
+#include <stdio.h>
 /**
  *main - Entry point
  *@argc: integer argument
