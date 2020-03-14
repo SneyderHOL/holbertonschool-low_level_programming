@@ -44,7 +44,7 @@ void op_char(va_list lista)
 void print_all(const char * const format, ...)
 {
 	int a = 0, b = 0;
-	void (*p) () = NULL;
+	void (*p)() = NULL;
 	char *sep = ", ";
 	vf var[] = {
 		{"c", op_char},
@@ -54,8 +54,8 @@ void print_all(const char * const format, ...)
 		{NULL, NULL}
 	};
 	va_list ap;
-	va_start(ap, format);
 
+	va_start(ap, format);
 	while (*(format + a) != 0)
 	{
 		b = 0;
