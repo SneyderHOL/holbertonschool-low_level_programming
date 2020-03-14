@@ -13,7 +13,7 @@ typedef struct fmt
 {
 	char *form;
 	void (*func)();
-}vf;
+} vf;
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
 void print_strings(const char *separator, const unsigned int n, ...);
