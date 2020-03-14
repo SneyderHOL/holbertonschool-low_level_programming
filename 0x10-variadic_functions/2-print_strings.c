@@ -20,7 +20,7 @@ void print_strings(const char *separator, const unsigned int n, ...)
 			printf("%s", s);
 		else
 			printf("(nil)");
-		if (a != n - 1 && separator)
+		if (a != n - 1 && separator != NULL)
 			printf("%s", separator);
 	}
 	printf("\n");
