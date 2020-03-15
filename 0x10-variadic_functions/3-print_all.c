@@ -60,7 +60,7 @@ void print_all(const char * const format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	while (*(format + a) != 0 && format != NULL)
+	while (format != NULL && *(format + a) != 0)
 	{
 		b = 0;
 		while (var[b].form != NULL)
