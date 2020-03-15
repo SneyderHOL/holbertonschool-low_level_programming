@@ -55,7 +55,6 @@ void print_all(const char * const format, ...)
 		{"i", op_int},
 		{"f", op_float},
 		{"s", op_str},
-		{NULL, NULL}
 	};
 	va_list ap;
 
@@ -63,7 +62,7 @@ void print_all(const char * const format, ...)
 	while (format != NULL && *(format + a) != 0)
 	{
 		b = 0;
-		while (var[b].form != NULL)
+		while (b < 4)
 		{
 			if (var[b].form[0] == *(format + a))
 			{
