@@ -6,7 +6,11 @@
  */
 void op_str(va_list lista)
 {
-	printf("%s", va_arg(lista, char *));
+	char *s = va_arg(lista, char *);
+
+	if (s == NULL)
+		s = "(nil)";
+	printf("%s", s);
 }
 /**
  *op_int - prints an integer
@@ -15,7 +19,7 @@ void op_str(va_list lista)
  */
 void op_int(va_list lista)
 {
-	printf("%d", va_arg(lista, int));
+	printf("%i", va_arg(lista, int));
 }
 /**
  *op_float - prints a float
@@ -56,7 +60,7 @@ void print_all(const char * const format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	while (*(format + a) != 0)
+	while (*(format + a) != 0 && format != NULL)
 	{
 		b = 0;
 		while (var[b].form != NULL)
