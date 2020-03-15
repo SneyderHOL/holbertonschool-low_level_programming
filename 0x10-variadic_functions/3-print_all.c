@@ -48,8 +48,7 @@ void op_char(va_list lista)
 void print_all(const char * const format, ...)
 {
 	int a = 0, b = 0;
-	void (*p)() = NULL;
-	char *sep = ", ";
+	char *sep = "";
 	vf var[] = {
 		{"c", op_char},
 		{"i", op_int},
@@ -59,17 +58,16 @@ void print_all(const char * const format, ...)
 	va_list ap;
 
 	va_start(ap, format);
-	while (format != NULL && *(format + a) != 0)
+	while (format != NULL && format[a] != 0)
 	{
 		b = 0;
 		while (b < 4)
 		{
-			if (var[b].form[0] == *(format + a))
+			if (var[b].form[0] == format[a])
 			{
-				p = var[b].func;
-				p(ap);
-				if (*(format + (a + 1)) != '\0')
-					printf("%s", sep);
+				printf("%s", sep);
+				var[b].func(ap);
+				sep = ", ";
 			}
 			b++;
 		}
