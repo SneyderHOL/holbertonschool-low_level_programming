@@ -1,15 +1,17 @@
-	extern printf
+	extern	printf
 	section	.text
-	global main
+	global	main
 
 main:
 	push	rbp
 	mov	rdi, fmt
-	mov 	rsi, msg
-	mov 	rax, 0
-	call 	printf
+	mov	rsi, msg
+	mov	rax, 0
+	call	printf
 
-	mov rax, 0
+	pop	rbp
+
+	mov	rax, 0
 	ret
 
 	section .rodata
