@@ -1,6 +1,13 @@
-#0x0E - Structures, typedef
+# Project 0x0E - Structures, typedef
 
 Use of structures and typedef in C
+
+Concepts:
+
+    What are structures, when, why and how to use them
+    How to use typedef
+
+Describing each program:
 
 dog.h - it's a struct dog with name of type char *, age of type float and owner of type char *.
 

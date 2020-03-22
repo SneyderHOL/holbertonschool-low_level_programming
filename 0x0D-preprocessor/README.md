@@ -1,6 +1,14 @@
-# 0x0D - preprocessor project
+# Project 0x0D - preprocessor
 
 Use of macros
+
+Concepts:
+
+    What are macros and how to use them
+    What are the most common predefined macros
+    How to include guard your header files
+
+Describing each program:
 
 0-object_like_macro.h - it's a header file that defines a macro named SIZE as an abbreviation for the token 1024.
 
@@ -11,3 +19,5 @@ Use of macros
 3-funcion_like_macro.h - it's a function-like macro ABS(x) that computes the absolute value of a number x.
 
 4-sum.h - it's a function-like macro SUM(x, y) that computes the sum of the numbers x and y.
+
+101-preprocessor_abuse.c is a program that can print Hello, Holberton.
