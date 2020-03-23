@@ -1,6 +1,6 @@
 # Project 0x12 C Singly Listed Lists
 
-Project conainting severall programs using linked lists in C
+Project containing severall programs using linked lists in C
 
 Concepts:
 
