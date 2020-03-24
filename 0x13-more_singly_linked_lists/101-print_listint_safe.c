@@ -11,6 +11,8 @@ size_t print_listint_safe(const listint_t *head)
 	unsigned int num = 0;
 	const listint_t *turtle = head;
 
+	if (head == NULL)
+		exit(98);
 	while (turtle != NULL && turtle > turtle->next)
 	{
 		printf("[%p] %i\n", (void *) turtle, turtle->n);
