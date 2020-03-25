@@ -18,13 +18,11 @@ size_t print_listint_safe(const listint_t *head)
 		printf("[%p] %i\n", (void *) turtle, turtle->n);
 		num++;
 		if (turtle < turtle->next)
+		{
+			printf("-> [%p] %i\n", (void *) turtle->next, turtle->next->n);
 			break;
+		}
 		turtle = turtle->next;
-	}
-
-	if (turtle != NULL && turtle < turtle->next)
-	{
-		printf("-> [%p] %i\n", (void *) turtle->next, turtle->next->n);
 	}
 	return (num);
 }
