@@ -9,20 +9,20 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	unsigned int num = 0;
-	const listint_t *turtle = head;
+	const listint_t *aux = head;
 
 	if (head == NULL)
 		return (0);
-	while (turtle != NULL)
+	while (aux != NULL)
 	{
-		printf("[%p] %i\n", (void *) turtle, turtle->n);
+		printf("[%p] %i\n", (void *) aux, aux->n);
 		num++;
-		if (turtle <= turtle->next)
+		if (aux <= aux->next)
 		{
-			printf("-> [%p] %i\n", (void *) turtle->next, turtle->next->n);
+			printf("-> [%p] %i\n", (void *) aux->next, aux->next->n);
 			break;
 		}
-		turtle = turtle->next;
+		aux = aux->next;
 	}
 	return (num);
 }
