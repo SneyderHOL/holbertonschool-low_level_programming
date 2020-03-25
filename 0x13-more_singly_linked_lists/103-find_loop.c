@@ -10,7 +10,7 @@ listint_t *find_listint_loop(listint_t *head)
 {
 	unsigned int num = 0;
 	listint_t *aux = head;
-	listint_t *tmp = head;
+	listint_t *tmp = NULL;
 
 	if (head == NULL)
 		return (NULL);
