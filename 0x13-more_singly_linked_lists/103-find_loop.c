@@ -8,22 +8,26 @@
  */
 listint_t *find_listint_loop(listint_t *head)
 {
-	unsigned int num = 0;
-	listint_t *aux = head;
+	listint_t *hare = head;
+	listint_t *turtle = head;
 
 	if (head == NULL)
 		return (NULL);
-	while (aux != NULL)
+	while (turtle != NULL || hare != NULL)
 	{
-		if (aux <= aux->next)
+		if (turtle == hare)
 		{
-			num++;
-			aux = aux->next;
+			turtle = head;
+			if (turtle != hare)
+			{
+				turtle = turtle->next;
+				hare = hare->next;
+			}
 			break;
 		}
-		aux = aux->next;
+		turtle = turle->next;
+		hare = hare->next->next;
 	}
-	if (num == 0)
-		return (NULL);
-	return (aux);
+
+	return (hare);
 }
