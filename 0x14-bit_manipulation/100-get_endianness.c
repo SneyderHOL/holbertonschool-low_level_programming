@@ -10,7 +10,7 @@ int get_endianness(void)
 	int *a = &num;
 	char *p = (void *) a;
 
-	if (p[1] > 1)
+	if (p[0] > 1)
 		return (1);
 	else
 		return (0);
