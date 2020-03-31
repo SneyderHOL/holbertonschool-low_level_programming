@@ -15,17 +15,17 @@ int create_file(const char *filename, char *text_content)
 {
 	int fd, aux = 0, res = 0;
 
-	if (filename == NULL && *filename == '\0')
+	if (filename == NULL || *filename == '\0')
 		return (-1);
 	fd = creat(filename, 0600);
 	if (fd == -1)
 		return (-1);
-	res = _strlen(text_content);
-	if (text_content == NULL || res == 0)
+	if (text_content == NULL)
 	{
 		close(fd);
-		return (0);
+		return (1);
 	}
+	res = _strlen(text_content);
 	aux = write(fd, text_content, res);
 	if (aux == -1)
 	{
