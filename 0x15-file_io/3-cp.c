@@ -20,31 +20,30 @@ int main(int argc, char *argv[])
 
 	if (argc != 3)
 	{
-		dprintf(2, "Usage: %s file_from file_to\n", argv[0]);
+		dprintf(STDERR_FILENO, "Usage: %s file_from file_to\n", argv[0]);
 		exit(97);
 	}
-/* Check flag O_CREAT */
 	first_fd = open(argv[1], O_RDONLY);
 	if (first_fd == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
 	second_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (second_fd == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(first_fd);
 		exit(99);
 	}
 	buffer = malloc(1024);
 	if (buffer == NULL)
-		exit(98);
+		exit(1);
 	fill_buffer(buffer, 1024);
 	aux = read(first_fd, buffer, 1024);
 	if (aux == -1)
 	{
-		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		free(buffer);
 		exit(98);
 	}
@@ -52,7 +51,7 @@ int main(int argc, char *argv[])
 	aux = write(second_fd, buffer, len);
 	if (aux == -1)
 	{
-		dprintf(2, "Error: Can't write to %s\n", argv[2]);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		close(first_fd);
 		exit(99);
 	}
@@ -62,7 +61,7 @@ int main(int argc, char *argv[])
 		aux = read(first_fd, buffer, 1024);
 		if (aux == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
 			close(first_fd);
 			close(second_fd);
@@ -72,7 +71,7 @@ int main(int argc, char *argv[])
 		aux = write(second_fd, buffer, len);
 		if (aux == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			close(first_fd);
 			exit(99);
 		}
@@ -80,14 +79,14 @@ int main(int argc, char *argv[])
 	aux = close(first_fd);
 	if (aux == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", first_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", first_fd);
 		free(buffer);
 		exit(100);
 	}
 	aux = close(second_fd);
 	if (aux == -1)
 	{
-		dprintf(2, "Error: Can't close fd %i\n", second_fd);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", second_fd);
 		free(buffer);
 		exit(100);
 	}
