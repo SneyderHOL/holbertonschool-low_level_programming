@@ -30,7 +30,7 @@ int main(int argc, char *argv[])
 		dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 		exit(98);
 	}
-	second_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 436);
+	second_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (second_fd == -1)
 	{
 		dprintf(2, "Error: Can't write to %s\n", argv[2]);
@@ -56,7 +56,25 @@ int main(int argc, char *argv[])
 		close(first_fd);
 		exit(99);
 	}
-
+	while (buffer[1023] != '\0')
+	{
+		fill_buffer(buffer, 1024);
+		aux = read(first_fd, buffer, 1024);
+		if (aux == -1)
+		{
+			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
+			free(buffer);
+			exit(98);
+		}
+		len = _strlen(buffer);
+		aux = write(second_fd, buffer, len);
+		if (aux == -1)
+		{
+			dprintf(2, "Error: Can't write to %s\n", argv[2]);
+			close(first_fd);
+			exit(99);
+		}
+	}
 	aux = close(first_fd);
 	if (aux == -1)
 	{
@@ -71,6 +89,7 @@ int main(int argc, char *argv[])
 		free(buffer);
 		exit(100);
 	}
+	free(buffer);
 	return (0);
 }
 
