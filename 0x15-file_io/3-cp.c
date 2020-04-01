@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 	}
 	buffer = malloc(1024);
 	if (buffer == NULL)
-		return (1);
+		exit(98);
 	fill_buffer(buffer, 1024);
 	aux = read(first_fd, buffer, 1024);
 	if (aux == -1)
@@ -64,6 +64,8 @@ int main(int argc, char *argv[])
 		{
 			dprintf(2, "Error: Can't read from file %s\n", argv[1]);
 			free(buffer);
+			close(first_fd);
+			close(second_fd);
 			exit(98);
 		}
 		len = _strlen(buffer);
