@@ -1,4 +1,4 @@
-# Project 0x12 C Singly Listed Lists
+# Project 0x12 C Singly Linked Lists
 
 Project containing severall programs using linked lists in C
 
