@@ -1,4 +1,4 @@
-# Project 0x12 C Doubly Linked Lists
+# Project 0x17 C Doubly Linked Lists
 
 Project containing severall programs using double linked lists in C
 
