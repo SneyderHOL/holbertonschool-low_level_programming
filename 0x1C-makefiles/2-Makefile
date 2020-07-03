@@ -6,13 +6,9 @@ NAME := holberton
 .PHONY = all
 
 all: $(NAME)
-#all: print
 
 $(NAME): $(OBJ)
-	$(CC) $(OBJ) -o $(NAME)
+	$(CC) $^ -o $@
 
 $(OBJ): %.o: %.c
 	$(CC) -c -o $@ $<
-
-#print:
-#	@echo "$(OBJ)"
