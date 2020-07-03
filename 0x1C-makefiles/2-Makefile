@@ -1,14 +1,14 @@
-CC := gcc
-SRC := main.c holberton.c
-OBJ := $(patsubst %.c,%.o,$(SRC))
-NAME := holberton
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(patsubst %.c,%.o,$(SRC))
+NAME = holberton
 
 .PHONY = all
 
-all: $(NAME)
+all: $(SRC) $(NAME)
 
 $(NAME): $(OBJ)
 	$(CC) $^ -o $@
 
-$(OBJ): %.o: %.c
-	$(CC) -c -o $@ $<
+$(SRC): 
+	$(CC) -c -o $@ $(OBJ)
