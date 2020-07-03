@@ -1,0 +1,18 @@
+CC := gcc
+SRC := main.c holberton.c
+OBJ := $(patsubst %.c,%.o,$(SRC))
+NAME := holberton
+
+.PHONY = all
+
+all: $(NAME)
+#all: print
+
+$(NAME): $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)
+
+$(OBJ): %.o: %.c
+	$(CC) -c -o $@ $<
+
+#print:
+#	@echo "$(OBJ)"
