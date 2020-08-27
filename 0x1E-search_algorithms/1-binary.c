@@ -36,37 +36,21 @@ void print_array(int *array, int size)
 
 int binary_search(int *array, size_t size, int value)
 {
-	int limit = 0, pos = 0, mid = 0, aux = 0;
+	int limit = (int) size, mid = 0, left = 0, right = 0;
 
 	if (array == NULL)
 		return (-1);
-	limit = (int) size;
-	print_array(array, limit);
-	if (limit == 1)
+	right = limit - 1;
+	while (left <= right)
 	{
-		if (array[0] == value)
-			return (0);
+		print_array(array + left, right + 1 - left);
+		mid = (left + right) / 2;
+		if (array[mid] < value)
+			left = mid + 1;
+		else if (array[mid] > value)
+			right = mid - 1;
 		else
-			return (-1);
+			return (mid);
 	}
-	mid = limit / 2;
-	if (limit % 2 == 0)
-	{
-		aux = mid;
-		mid = mid - 1;
-	}
-	else
-		aux = mid + 1;
-	if (value == array[mid])
-		return (mid);
-	else if (value > array[mid])
-	{
-		pos = binary_search((array + mid + 1), (size_t) limit - aux,
-				    value);
-		if (pos != -1)
-			pos += limit / 2;
-	}
-	else
-		pos = binary_search(array, (size_t) mid, value);
-	return (pos);
+	return (-1);
 }
