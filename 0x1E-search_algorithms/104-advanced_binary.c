@@ -36,26 +36,36 @@ void print_array(int *array, int size)
 
 int advanced_binary(int *array, size_t size, int value)
 {
-	int limit = (int) size, mid = 0, left = 0, right = 0;
+	int limit = (int) size, mid = 0, left = 0, right = 0, pos = -1;
 
 	if (array == NULL)
-		return (-1);
+		return (pos);
 	right = limit - 1;
-	while (left <= right)
+	if (left <= right)
 	{
 		print_array(array + left, right + 1 - left);
 		mid = (left + right) / 2;
 		if (array[mid] < value)
-			left = mid + 1;
+		{
+			pos = advanced_binary(array + mid + 1,
+					      (size_t) right - mid, value);
+			if (pos != -1)
+				pos += mid + 1;
+		}
 		else if (array[mid] > value)
-			right = mid;
+			pos = advanced_binary(array, (size_t) right - mid,
+					      value);
 		else
 		{
 			if (mid != 0 && array[mid - 1] == value)
-				right = mid;
+			{
+				pos = advanced_binary(array,
+						      (size_t) right - mid,
+						      value);
+			}
 			else
 				return (mid);
 		}
 	}
-	return (-1);
+	return (pos);
 }
